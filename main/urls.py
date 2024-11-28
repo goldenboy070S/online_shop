@@ -1,11 +1,16 @@
 from rest_framework.routers import DefaultRouter
-from .views import CategoryViewSet, ColorViewSet, BrandViewSet, OrderViewSet, ProductViewSet
+from django.urls import include, path
+from .views import CategoryViewSet, ColorViewSet, BrandViewSet, OrderViewSet, ProductViewSet, UserViewSet, CartViewSet, CartItemViewSet, ImageViewSet
 
 router = DefaultRouter()
-router.register('category', CategoryViewSet)
-router.register('color', ColorViewSet)
-router.register('brand', BrandViewSet)
-router.register('order', OrderViewSet)
-router.register('product', ProductViewSet)
+router.register(r'categories', CategoryViewSet)
+router.register(r'colors', ColorViewSet)
+router.register(r'brands', BrandViewSet)
+router.register(r'products', ProductViewSet, basename='product')
+router.register(r'images', ImageViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'carts', CartViewSet)
+router.register(r'cartItems', CartItemViewSet)
+router.register(r'orders', OrderViewSet)
 
 urlpatterns = router.urls
