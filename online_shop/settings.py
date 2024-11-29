@@ -102,12 +102,8 @@ WSGI_APPLICATION = 'online_shop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'onlineshop',
-        'USER': 'postgres',
-        'PASSWORD': 'sardor2007a',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # SQLite faylini loyihangizning asosiy papkasida saqlanadi
     }
 }
 
